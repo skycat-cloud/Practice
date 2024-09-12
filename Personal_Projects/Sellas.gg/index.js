@@ -52,7 +52,7 @@ function getCharacterBasic(ocid) {
       if (!response.ok) {
         return response.json().then((errorData) => {
           throw new Error(
-            `오류가 발생했습니다. 상태: ${response.status}, 메시지: ${
+            `오류가 발생했습니다! 상태: ${response.status}, 메시지: ${
               response.statusText
             }, 상세: ${errorData.message || '오류'}`
           );
