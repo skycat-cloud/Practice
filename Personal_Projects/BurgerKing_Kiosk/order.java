@@ -6,7 +6,9 @@ public class order {
   public static void orderask() {
     int burgerC;
     
-    while (true) {  // 이 부분도 반복문으로 처리
+    while (true) {
+      System.out.println("");
+      System.out.println("");
       System.out.print("주문 진행하시겠습니까?(진행:1, 돌아가기:2) : ");
       burgerC = scanner.nextInt();
       switch (burgerC) {

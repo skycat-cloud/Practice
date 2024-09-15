@@ -6,7 +6,7 @@ public class MainMenuSelect {
   static Scanner scanner = new Scanner(System.in);
 
   public static void mainmenuselect() {
-    while (true) { // 무한 반복 구조로 메뉴를 계속 표시
+    while (true) {
       try {
         System.out.print("메뉴 번호를 입력해주세요: ");
         int selectnum1 = scanner.nextInt(); // 사용자가 입력한 메뉴 번호를 받음
@@ -17,8 +17,6 @@ public class MainMenuSelect {
             System.out.println("");
             System.out.println("");
             BurgerMenu.displayBurgerMenu(); // 버거 메뉴 출력
-            System.out.println("");
-            System.out.println("");
             System.out.println("");
             BurgerMenu.orderBurger(); // 버거 주문
             return; // 주문 후 메서드 종료
@@ -38,7 +36,8 @@ public class MainMenuSelect {
               TimeUnit.SECONDS.sleep(1);
             }catch(InterruptedException e){
             }
-            System.out.println(""); // 에러 발생 시 다시 입력을 요구
+            BurgerMenu.mainmenu();
+            return;
           }
         }
 
