@@ -10,7 +10,6 @@ public class BurgerMenu {
   public static void mainmenu(){
     System.out.println("@@@@@@@@@@@@ 버거킹 키오스크 입니다 @@@@@@@@@@@@");
     System.out.println("1: 주문하기 || ***** || 3: 관리자 메뉴");
-    System.out.print("숫자를 입력해 주세요: ");
   }
 
   public static void initializeMenu() {
