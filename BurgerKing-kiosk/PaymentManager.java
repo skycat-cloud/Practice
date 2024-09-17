@@ -105,11 +105,11 @@ public class PaymentManager {
             } catch (InterruptedException e) {
               e.printStackTrace(); 
             }
-
+            
             System.out.println("");
             System.out.println("");
         }
-
+        
       } catch (InputMismatchException e) {
         System.out.println("숫자를 입력해주세요.");
         scanner.next(); // 잘못된 입력 제거
