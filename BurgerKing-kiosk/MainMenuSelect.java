@@ -29,24 +29,30 @@ public class MainMenuSelect {
           }
 
           default -> { // 잘못된 숫자 입력 시
+            System.out.println("");
             System.out.println("잘못된 숫자입니다. 다시 입력해 주세요.");
             try{
               TimeUnit.SECONDS.sleep(1);
             }catch(InterruptedException e){
             }
             BurgerMenu.mainmenu();
+            mainmenuselect();
             return;
           }
         }
 
       } catch (InputMismatchException e) { // 숫자가 아닌 값을 입력할 때 예외 처리
-        System.out.println("숫자를 입력해 주세요.");
-        try{
-            TimeUnit.SECONDS.sleep(1);
-          }catch(InterruptedException e2){
-          }
         scanner.next();
         System.out.println("");
+        System.out.println("잘못된 입력입니다. 숫자를 입력해 주세요.");
+        
+        try{
+          TimeUnit.SECONDS.sleep(1);
+        }catch(InterruptedException e2){
+          }
+          BurgerMenu.mainmenu();
+          mainmenuselect();
+          return;
       }
     }
   }

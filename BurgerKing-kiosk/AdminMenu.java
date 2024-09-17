@@ -90,6 +90,7 @@ public class AdminMenu { // 메뉴 추가/삭제
 
       BurgerMenu.burgerMenu.add(new Burger(name, calories, price));
       System.out.println("메뉴가 추가되었습니다.");
+
       TimeUnit.SECONDS.sleep(1); // 1초 대기
       admin(); // 메뉴 추가 후 다시 관리자 메뉴로 돌아감
     } catch (InputMismatchException | InterruptedException e) {
@@ -110,7 +111,9 @@ public class AdminMenu { // 메뉴 추가/삭제
         System.out.println("메뉴가 삭제되었습니다.");
         TimeUnit.SECONDS.sleep(1); // 1초 대기
         admin(); // 메뉴 삭제 후 다시 관리자 메뉴로 돌아감
-      } else {
+      } 
+      
+      else {
         System.out.println("잘못된 메뉴 번호입니다.");
         admin(); // 다시 관리자 메뉴로 돌아감
       }
