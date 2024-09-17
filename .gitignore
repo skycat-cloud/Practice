@@ -1,0 +1,45 @@
+# 로그 파일
+logs
+*.log
+npm-debug.log*
+
+# 의존성 디렉토리
+node_modules/
+jspm_packages/
+
+# npm 캐시 디렉토리 
+.npm
+
+# eslint 캐시 
+.eslintcache
+
+# REPL 히스토리 
+.node_repl_history
+
+# 'npm pack' 명령어의 출력 파일
+*.tgz
+
+# 테스트 커버리지 디렉토리
+coverage/
+
+# OS 관련 파일
+.DS_Store
+
+# 환경 변수 파일
+.env
+.env.local
+.env.*.local
+
+# 빌드 출력 디렉토리
+dist/
+build/
+
+#apikey 무시
+myapi.js
+
+.vscode/
+
+#JAVA, Web Study 폴더 무시
+Java_Study/
+Web_Study/
+Mysql/
