@@ -8,6 +8,7 @@ public class BurgerMenu {
   static int burgerNum, burgerQ, setornot, setQ;
 
   public static void mainmenu(){
+    System.out.println("");
     System.out.println("@@@@@@@@@@@@ 버거킹 키오스크 입니다 @@@@@@@@@@@@");
     System.out.println("1: 주문하기 || ***** || 3: 관리자 메뉴");
   }
@@ -49,11 +50,11 @@ public class BurgerMenu {
     Burger burger = burgerMenu.get(burgerNum - 1);
     totalPrice = burger.price * burgerQ;
     if (setornot == 1 && burgerQ == 1) {
-      System.out.printf("총 가격은: %d원 입니다.\n", totalPrice + 3000);
+      System.out.printf("총 가격은 %d원 입니다.\n", totalPrice + 3000);
     } else if (setornot == 2) {
-      System.out.printf("총 가격은: %d원 입니다.\n", totalPrice);
+      System.out.printf("총 가격은 %d원 입니다.\n", totalPrice);
     } else {
-      System.out.printf("총 가격은: %d원 입니다.\n", totalPrice + (3000 * setQ));
+      System.out.printf("총 가격은 %d원 입니다.\n", totalPrice + (3000 * setQ));
     }
   }
 
@@ -103,11 +104,11 @@ public class BurgerMenu {
         burgerQ = scanner.nextInt();
         System.out.println("");
         System.out.println("");
-        System.out.println("");
         Burger selectedBurger = BurgerMenu.burgerMenu.get(burgerNum - 1);
         System.out.printf("%s %d개 선택하셨습니다.%n", selectedBurger.name, burgerQ);
         askSetMenu();
-        order.orderask();
+        BurgerMenu.addTotalPrice(); // 총 합계 출력
+        order.orderask(); // 주문 방식 선택 (카드, 현금)
         break;
       }
     }

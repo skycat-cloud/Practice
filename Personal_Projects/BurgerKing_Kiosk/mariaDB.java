@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class mariaDB {
@@ -9,15 +10,13 @@ public class mariaDB {
     // MySQL 드라이버 로딩
     try {
       Class.forName("com.mysql.cj.jdbc.Driver");
-      System.out.println("MySQL JDBC Driver Registered!");
+      System.out.println("MySQL JDBC 드라이버가 연결되었습니다.");
     } catch (ClassNotFoundException e) {
-      System.out.println("MySQL JDBC Driver not found.");
-      e.printStackTrace();
-      return;
+      System.out.println("MySQL JDBC 드라이버를 찾을 수 없습니다..");
     }
 
-    // MySQL 연결 정보 (MariaDB는 MySQL과 호환되므로 URL은 동일하게 설정)
-    String url = "jdbc:mysql://localhost:3306/burgerdb"; // MariaDB와 호환되는 MySQL URL
+    // MySQL 연결 정보
+    String url = "jdbc:mysql://localhost:3306/burgerdb"; 
     String username = "root";
     String password = "2012";
 
@@ -42,10 +41,8 @@ public class mariaDB {
       rs.close();
       stmt.close();
       conn.close();
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+      }
+    catch (SQLException e){}
   }
 }
 

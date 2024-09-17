@@ -15,7 +15,6 @@ public class MainMenuSelect {
           case 1 -> { // 주문하기
             System.out.println("");
             System.out.println("");
-            System.out.println("");
             BurgerMenu.displayBurgerMenu(); // 버거 메뉴 출력
             System.out.println("");
             BurgerMenu.orderBurger(); // 버거 주문
@@ -23,7 +22,6 @@ public class MainMenuSelect {
           }
 
           case 3 -> { // 관리자 메뉴
-            System.out.println("");
             System.out.println("");
             System.out.println("");
             AdminMenu.admin(); // 관리자 메뉴 실행
@@ -47,7 +45,7 @@ public class MainMenuSelect {
             TimeUnit.SECONDS.sleep(1);
           }catch(InterruptedException e2){
           }
-        scanner.next(); // 잘못된 입력을 소비하고 다시 입력 받기
+        scanner.next();
         System.out.println("");
       }
     }
