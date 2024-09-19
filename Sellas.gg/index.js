@@ -1,4 +1,6 @@
-import config from './myapi';
+import config from './myapi.js';
+
+const API_KEY = config.API_KEY;
 
 const headers = {
   'x-nxopen-api-key': API_KEY,
@@ -26,19 +28,12 @@ function getCharacterOcid() {
     })
     .then((data) => {
       console.log(data); // 콘솔에 데이터 출력
-      displayResultOcid(data); // 결과를 화면에 출력
-      getCharacterBasic(data.ocid); // OCID를 가져온 후 캐릭터 기본 정보를 가져옵니다.
+      getCharacterBasic(data.ocid); // OCID를 가져온 후 캐릭터 기본 정보를 가져옴
     })
     .catch((error) => {
       console.error('오류가 발생했습니다:', error);
       document.getElementById('resultOcidHtml').innerText = error.message;
     });
-}
-
-function displayResultOcid(data) {
-  //ocid 값 출력
-  const resultOcid = document.getElementById('resultOcidHtml');
-  resultOcid.innerHTML = `<p><strong>캐릭터 OCID:</strong> ${data.ocid}</p>`;
 }
 
 function getCharacterBasic(ocid) {
@@ -71,10 +66,25 @@ function getCharacterBasic(ocid) {
 
 function displayResultBasic(data) {
   const resultBasic = document.getElementById('resultBasicHtml');
-  resultBasic.innerHTML = `<p><strong>캐릭터 기본 정보</strong></p>
-    <p>닉네임: ${data.character_name}</p>
-    <p>레벨: ${data.character_level}</p>
-    <p>직업: ${data.character_class}</p>
-    <p>월드: ${data.world_name}</p>
-    <p>이미지: <img src="${data.character_image}" alt="캐릭터 이미지" style="max-width: 300px; height: auto;" /></p>`;
+  resultBasic.innerHTML = `
+    <p>${data.character_name}</p>
+    <p><strong>레벨:</strong> ${data.character_level}</p>
+    <p><strong>직업:</strong> ${data.character_class}</p>
+    <p><strong>월드:</strong> ${data.world_name}</p>
+    <img src="${data.character_image}" alt="${data.character_name} 이미지" />
+  `;
 }
+
+function handleEnterKey(event) {
+  if (event.key === 'Enter') {
+    getCharacterOcid();
+  }
+}
+
+document
+  .getElementById('characterNameInput')
+  .addEventListener('keydown', handleEnterKey);
+
+window.getCharacterOcid = getCharacterOcid;
+window.getCharacterBasic = getCharacterBasic;
+window.displayResultBasic = displayResultBasic;
