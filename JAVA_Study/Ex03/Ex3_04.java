@@ -12,6 +12,7 @@ public class Ex3_04 {
   }
 
   public static void arrSumDisplay(){
+    System.out.println("두 행렬의 합");
     for(int i = 0; i < 3; i++){
       System.out.printf("%d   ", arrsum1[i]);
     }

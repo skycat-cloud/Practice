@@ -15,27 +15,25 @@ public class Ex2_29 {
   }
 
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.print("행렬의 행 수: ");
-    int rows = scanner.nextInt();
-    System.out.print("행렬의 열 수: ");
-    int cols = scanner.nextInt();
-
-    int[][] a = new int[rows][cols];
-
-    System.out.println("행렬a");
-    inputMatrix(scanner, a);
-
-    int[][] clonedArray = arrayClone2(a);
-
-    System.out.println("\n행렬a:");
-    printMatrix(a);
-
-    System.out.println("복사된 행렬:");
-    printMatrix(clonedArray);
-
-    scanner.close();
+      try (Scanner scanner = new Scanner(System.in)) {
+          System.out.print("행렬의 행 수: ");
+          int rows = scanner.nextInt();
+          System.out.print("행렬의 열 수: ");
+          int cols = scanner.nextInt();
+          
+          int[][] a = new int[rows][cols];
+          
+          System.out.println("행렬a");
+          inputMatrix(scanner, a);
+          
+          int[][] clonedArray = arrayClone2(a);
+          
+          System.out.println("\n행렬a:");
+          printMatrix(a);
+          
+          System.out.println("복사된 행렬:");
+          printMatrix(clonedArray);
+      }
   }
 
   public static void inputMatrix(Scanner scanner, int[][] matrix) {
