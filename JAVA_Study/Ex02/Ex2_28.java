@@ -79,7 +79,5 @@ public class Ex2_28 {
     } else {
         System.out.println("false를 반환했습니다. 행렬의 크기가 맞지 않아 덧셈을 수행할 수 없습니다.");
     }
-
-    scanner.close();
   }
 }

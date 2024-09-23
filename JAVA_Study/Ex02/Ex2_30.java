@@ -21,31 +21,32 @@ public class Ex2_30 {
   return minVal;
   }
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int x, y, z;
-    System.out.print("x값: ");
-    x = scanner.nextInt();
-    System.out.print("y값: ");
-    y = scanner.nextInt();
-    System.out.print("z값: ");
-    z = scanner.nextInt();
+    try (Scanner scanner = new Scanner(System.in)) {
+      int x, y, z;
+      System.out.print("x값: ");
+      x = scanner.nextInt();
+      System.out.print("y값: ");
+      y = scanner.nextInt();
+      System.out.print("z값: ");
+      z = scanner.nextInt();
 
-    min(x, y);
-    min(x, y, z);
+      min(x, y);
+      min(x, y, z);
 
-    System.out.print("배열 a의 요소 수: ");
+      System.out.print("배열 a의 요소 수: ");
 
-    int length = scanner.nextInt();
-    int[] arr = new int[length];
+      int length = scanner.nextInt();
+      int[] arr = new int[length];
 
-    for (int i = 0; i < length; i++) {
-      System.out.print("a[" + i + "]: ");
-      arr[i] = scanner.nextInt();
+      for (int i = 0; i < length; i++) {
+        System.out.print("a[" + i + "]: ");
+        arr[i] = scanner.nextInt();
+      }
+      min(arr);
+
+      System.out.println("x, y 의 최솟값은 " + min(x, y) + "입니다.");
+      System.out.println("x, y, z 의 최솟값은 " + min(x, y, z) + "입니다.");
+      System.out.println("배열의 최솟값은 " + min(arr) + "입니다.");
     }
-    min(arr);
-
-    System.out.println("x, y 의 최솟값은 " + min(x, y) + "입니다.");
-    System.out.println("x, y, z 의 최솟값은 " + min(x, y, z) + "입니다.");
-    System.out.println("배열의 최솟값은 " + min(arr) + "입니다.");
   }
 }
